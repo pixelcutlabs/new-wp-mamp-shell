@@ -1,11 +1,21 @@
 #!/bin/sh
+clear
 cd ~/Sites
 printf "What is your BitBucket username? "
 read BBUSERNAME
 printf "What is the name of the BitBucket repo (i.e. example-site)? "
+read BBREPO
+printf "What should the directory be called on your system (default $BBREPO)? "
 read NEWDIR
-git clone https://$BBUSERNAME@bitbucket.org/tribeswell-llc/$NEWDIR.git
+if [ "$NEWDIR" = "" ]; then
+	set NEWDIR = $BBREPO
+fi
+git clone https://$BBUSERNAME@bitbucket.org/tribeswell-llc/$BBREPO.git $NEWDIR
 cd $NEWDIR
+git remote set-url origin https://$BBUSERNAME@bitbucket.org/tribeswell-llc/$BBREPO.git
+git remote add upstream https://$BBUSERNAME@bitbucket.org/tribeswell-llc/perfect-setup.git
+echo "" && echo "Remotes set successfully!" && echo ""
+git remote -v && echo ""
 printf "What would you like to name your new database (i.e. example_site)? "
 read NEWDB
 printf "Create a strong password for this database: "
@@ -17,7 +27,7 @@ read -s MYSQLPWD
 
 if [ -f ./wp-config.php ]
 then
-open http://$NEWDIR:7888/wp/wp-admin/install.php
+echo "" && echo "There appears to be a wp-config.php file already." && open http://$NEWDIR:7888/wp/wp-admin/install.php
 else
 cp -n ./wp-config-sample.php ./wp-config.php
 SECRETKEYS=$(curl -L https://api.wordpress.org/secret-key/1.1/salt/)
@@ -31,5 +41,5 @@ sed -i '' -e "s/${WPHOME}/http:\/\/${NEWDIR}:7888/g" wp-config.php
 sed -i '' -e "s/${DBUSER}/${NEWDB}/g" wp-config.php
 sed -i '' -e "s/${DBPASS}/${MYSQLPWD}/g" wp-config.php
 sed -i '' -e "s/${DBNAME}/${NEWDB}/g" wp-config.php
-open http://$NEWDIR:7888/wp/wp-admin/
+echo "" && echo "Success!" && open http://$NEWDIR:7888/wp/wp-admin/
 fi
