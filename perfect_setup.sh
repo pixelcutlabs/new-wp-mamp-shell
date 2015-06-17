@@ -7,8 +7,8 @@ printf "What is the name of the BitBucket repo (i.e. example-site)? "
 read BBREPO
 printf "What should the directory be called on your system (default $BBREPO)? "
 read NEWDIR
-if [ "$NEWDIR" = "" ]; then
-	set NEWDIR = $BBREPO
+if [ "$NEWDIR" = "" ] then
+	set NEWDIR = "$BBREPO"
 fi
 git clone https://$BBUSERNAME@bitbucket.org/tribeswell-llc/$BBREPO.git $NEWDIR
 cd $NEWDIR
