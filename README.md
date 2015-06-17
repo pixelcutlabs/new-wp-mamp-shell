@@ -1,9 +1,16 @@
-New MAMP [Perfect Setup](https://bitbucket.org/tribeswell-llc/perfect-setup) Install via Shell
-===
+# New MAMP [Perfect Setup](https://bitbucket.org/tribeswell-llc/perfect-setup) Install via Shell
 
 Roll a new [Perfect Setup](https://bitbucket.org/tribeswell-llc/perfect-setup) installation for MAMP PRO with this quick shell script.
 
-Assuming you have MAMP installed in `/Applications/MAMP/`, you put all of your sites in `~/Sites/`, you have your Apache port set to `7888`, you are a member of the `tribeswell-llc` team on BitBucket, and you are using MAMP PRO:
+### Prerequisites
+
+1. You must have MAMP installed in `/Applications/MAMP/`.
+1. You must have your Apache port set to `7888`.
+1. You must put all of your sites in `~/Sites/`. If this directory does not exist, create it now.
+1. You must be a member of the `tribeswell-llc` team on BitBucket.
+1. You must be using MAMP PRO.
+
+### Instructions
 
 1. Download the shell script. Copy it to your home directory.
 1. Run `./perfect_setup.sh` from your home directory in Terminal.
