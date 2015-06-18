@@ -19,6 +19,7 @@ read NEWDB
 printf "Create a strong password for this database: "
 read -s MYSQLPWD
 
+echo ""
 /Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot -e "CREATE USER '$NEWDB'@'localhost' IDENTIFIED BY '$MYSQLPWD'; CREATE DATABASE $NEWDB; GRANT ALL ON $NEWDB.* TO '$NEWDB'@'localhost';"
 
 /Applications/MAMP/Library/bin/mysql --host=localhost -u$NEWDB -p$MYSQLPWD $NEWDB < ./perfect_setup.sql
