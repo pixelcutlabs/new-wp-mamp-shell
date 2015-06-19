@@ -43,9 +43,9 @@ else
 	DBUSER=$"username_here"
 	DBPASS=$"password_here"
 	DBNAME=$"database_name_here"
-	sed -i'' -e "s/${WPHOME}/http:\/\/${NEWDIR}:7888/g" ./wp-config.php
-	sed -i'' -e "s/${DBUSER}/${NEWDB}/g" ./wp-config.php
-	sed -i'' -e "s/${DBPASS}/${MYSQLPWD}/g" ./wp-config.php
-	sed -i'' -e "s/${DBNAME}/${NEWDB}/g" ./wp-config.php
+	sed -i '' -e "s/${WPHOME}/http:\/\/${NEWDIR}:7888/g" ./wp-config.php
+	sed -i '' -e "s/${DBUSER}/${NEWDB}/g" ./wp-config.php
+	sed -i '' -e "s/${DBPASS}/${MYSQLPWD}/g" ./wp-config.php
+	sed -i '' -e "s/${DBNAME}/${NEWDB}/g" ./wp-config.php
 	echo "" && echo "Success!" && open http://$NEWDIR:7888/wp/wp-admin/
 fi
