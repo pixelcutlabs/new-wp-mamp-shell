@@ -3,9 +3,9 @@ clear
 cd ~/Sites
 printf "What is your BitBucket username? "
 read BBUSERNAME
-printf "What is the name of the BitBucket repo (i.e. perfect-setup or example-site)? "
+printf "What is the name of the BitBucket repo?\n(i.e. perfect-setup or example-site) "
 read BBREPO
-printf "What should the directory be called on your system? This should be another BitBucket repo name. Press return/enter for the default. (default $BBREPO)? "
+printf "What should the directory be called on your system?\nThis should be another BitBucket repo name.\nPress return/enter for the default. (default $BBREPO)? "
 read NEWDIR
 NEWDIR=${NEWDIR:-$BBREPO}
 git clone https://$BBUSERNAME@bitbucket.org/tribeswell-llc/$BBREPO.git $NEWDIR
@@ -14,7 +14,7 @@ git remote set-url origin https://$BBUSERNAME@bitbucket.org/tribeswell-llc/$BBRE
 git remote add upstream https://$BBUSERNAME@bitbucket.org/tribeswell-llc/perfect-setup.git
 echo "" && echo "Remotes set successfully!" && echo ""
 git remote -v && echo ""
-printf "What would you like to name your new database (i.e. example_site)? "
+printf "What would you like to name your new database?\n(i.e. example_site) "
 read NEWDB
 printf "Create a strong password for this database: "
 read -s MYSQLPWD
