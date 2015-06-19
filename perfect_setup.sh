@@ -37,9 +37,11 @@ else
 	SECRETKEYS=$(curl -L https://api.wordpress.org/secret-key/1.1/salt/)
 	EXISTINGKEYS='put your unique phrase here'
 	printf '%s\n' "g/$EXISTINGKEYS/d" a "$SECRETKEYS" . w | ed -s ./wp-config.php
+	WPHOME=$"wp_home_here"
 	DBUSER=$"username_here"
 	DBPASS=$"password_here"
 	DBNAME=$"database_name_here"
+	sed -i '' -e "s/${WPHOME}/http:\/\/${NEWDIR}:7888/g" ./wp-config.php
 	sed -i '' -e "s/${DBUSER}/${NEWDB}/g" ./wp-config.php
 	sed -i '' -e "s/${DBPASS}/${MYSQLPWD}/g" ./wp-config.php
 	sed -i '' -e "s/${DBNAME}/${NEWDB}/g" ./wp-config.php
