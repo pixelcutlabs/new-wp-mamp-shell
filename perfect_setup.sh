@@ -10,7 +10,7 @@ read NEWDIR
 NEWDIR=${NEWDIR:-$BBREPO}
 git clone https://$BBUSERNAME@bitbucket.org/tribeswell-llc/$BBREPO.git $NEWDIR
 cd $NEWDIR
-git remote set-url origin https://$BBUSERNAME@bitbucket.org/tribeswell-llc/$BBREPO.git
+git remote set-url origin https://$BBUSERNAME@bitbucket.org/tribeswell-llc/$NEWDIR.git
 git remote add upstream https://$BBUSERNAME@bitbucket.org/tribeswell-llc/perfect-setup.git
 echo "" && echo "Remotes set successfully!" && echo ""
 git remote -v && echo ""
