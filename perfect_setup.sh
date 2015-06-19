@@ -45,5 +45,5 @@ else
 	sed -i '' -e "s/${DBUSER}/${NEWDB}/g" ./wp-config.php
 	sed -i '' -e "s/${DBPASS}/${MYSQLPWD}/g" ./wp-config.php
 	sed -i '' -e "s/${DBNAME}/${NEWDB}/g" ./wp-config.php
-	echo "" && echo "Success!" && open http://$NEWDIR:7888/wp-admin/
+	echo "" && echo "Success!" && open http://$NEWDIR:7888 && open http://$NEWDIR:7888/wp-admin/
 fi
