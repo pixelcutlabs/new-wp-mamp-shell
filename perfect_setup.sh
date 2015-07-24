@@ -14,10 +14,9 @@ git remote set-url origin https://$BBUSERNAME@bitbucket.org/tribeswell-llc/$NEWD
 git remote add upstream https://$BBUSERNAME@bitbucket.org/tribeswell-llc/perfect-setup.git
 echo "" && echo "Remotes set successfully!" && echo ""
 git remote -v && echo ""
-printf "What would you like to name your new database?\n(i.e. example_site) "
-read NEWDB
-printf "Create a strong password for this database: "
-read -s MYSQLPWD
+printf "Generating DB credentials...\n"
+NEWDB=`echo $NEWDIR | tr '-' '_'`
+MYSQLPWD=`date +%s | sha256sum | base64 | head -c 16`
 
 if [[ "$OSTYPE" == "msys" ]]; then
 	echo ""
