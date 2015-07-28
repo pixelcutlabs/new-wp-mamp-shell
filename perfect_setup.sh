@@ -16,6 +16,7 @@ echo "" && echo "Remotes set successfully!" && echo ""
 git remote -v && echo ""
 printf "Generating DB credentials...\n"
 NEWDB=`echo $NEWDIR | tr '-' '_'`
+NEWDB=${NEWDB:0:16}
 MYSQLPWD=`date +%s | sha256sum | base64 | head -c 16`
 
 if [[ "$OSTYPE" == "msys" ]]; then
