@@ -16,5 +16,8 @@ Roll a new [Perfect Setup](https://bitbucket.org/tribeswell-llc/perfect-setup) i
 1. Make sure Apache and MySQL are both turned on in MAMP PRO.
 1. Run `./perfect_setup.sh` from your home directory in Terminal.
 1. Answer the prompts until the project starts cloning.
-1. Add your host in MAMP PRO while the project is cloning, and map it to the newly created directory in `~/Sites/`.
+	1. If you created a brand new repo, answer `perfect-setup` to the first question and the name of your repo to the second.
+	1. If someone else created the repo, answer the name of the repo to the first and accept the default for the second.
+1. Wait until the script finishes and displays no error messages.
+1. Add your host in MAMP PRO and map it to the newly created directory in `~/Sites/`.
 1. Done!
