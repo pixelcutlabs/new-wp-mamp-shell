@@ -12,7 +12,7 @@ Roll a new [Perfect Setup](https://bitbucket.org/tribeswell-llc/perfect-setup) i
 
 ### Instructions
 
-1. Download the shell script. Copy it to your home directory. Make it executable, i.e. `chmod +x ./perfect_setup.sh`.
+1. Download the latest version of the shell script ([there's a version number at the top](https://github.com/zackphilipps/new-wp-mamp-shell/blob/master/perfect_setup.sh)). Copy it to your home directory. Make it executable, i.e. `chmod +x ./perfect_setup.sh`.
 1. Make sure Apache and MySQL are both turned on in MAMP PRO.
 1. Run `./perfect_setup.sh` from your home directory in Terminal.
 1. Answer the prompts until the project starts cloning.
