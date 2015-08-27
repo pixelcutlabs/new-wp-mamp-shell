@@ -1,4 +1,6 @@
 #!/bin/sh
+# perfect_setup.sh v0.0.1
+
 clear
 cd ~/Sites
 printf "What is your BitBucket username? "
