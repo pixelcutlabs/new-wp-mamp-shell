@@ -1,5 +1,5 @@
 #!/bin/sh
-# perfect_setup.sh v0.0.2
+# perfect_setup.sh v0.0.3
 
 clear
 cd ~/Sites
