@@ -1,5 +1,5 @@
 #!/bin/sh
-# perfect_setup.sh v0.0.1
+# perfect_setup.sh v0.0.2
 
 clear
 cd ~/Sites
@@ -47,5 +47,9 @@ else
 	sed -i '' -e "s/${DBUSER}/${NEWDB}/g" ./wp-config.php
 	sed -i '' -e "s/${DBPASS}/${MYSQLPWD}/g" ./wp-config.php
 	sed -i '' -e "s/${DBNAME}/${NEWDB}/g" ./wp-config.php
-	echo "" && echo "Success!" && open http://$NEWDIR:7888 && open http://$NEWDIR:7888/wp-admin/
+	cd wp-content/themes/scratch-theme/grunt/
+	cp -n ./Gruntfile-sample.js ./Gruntfile.js
+	sed -i '' -e "s/${WPHOME}/${NEWDIR}:7888/g" ./Gruntfile.js
+	npm install
+	echo "" && echo "Success!" && grunt && open http://$NEWDIR:7888/wp-admin/
 fi
