@@ -18,6 +18,6 @@ Roll a new [Perfect Setup](https://bitbucket.org/tribeswell-llc/perfect-setup) i
 1. Answer the prompts until the project starts cloning.
 	1. If you created a brand new repo, answer `perfect-setup` to the first question and the name of your repo to the second.
 	1. If someone else created the repo, answer the name of the repo to the first and accept the default for the second.
-1. Wait until the script finishes and displays no error messages.
-1. Add your host in MAMP PRO and map it to the newly created directory in `~/Sites/`.
+1. Add your host in MAMP PRO while `npm install` is running and map it to the newly created directory in `~/Sites/`.
+1. Wait until the script finishes and opens tabs in your browser.
 1. Done!

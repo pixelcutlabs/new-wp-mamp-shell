@@ -51,5 +51,5 @@ else
 	cp -n ./Gruntfile-sample.js ./Gruntfile.js
 	sed -i '' -e "s/${WPHOME}/${NEWDIR}:7888/g" ./Gruntfile.js
 	npm install
-	echo "" && echo "Success!" && grunt && open http://$NEWDIR:7888/wp-admin/
+	echo "" && echo "Success!" && open http://$NEWDIR:7888/wp-admin/ && grunt
 fi
