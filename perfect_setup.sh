@@ -1,5 +1,5 @@
 #!/bin/sh
-# perfect_setup.sh v0.0.3
+# perfect_setup.sh v0.0.4
 
 clear
 cd ~/Sites
@@ -51,5 +51,5 @@ else
 	cp -n ./Gruntfile-sample.js ./Gruntfile.js
 	sed -i '' -e "s/${WPHOME}/${NEWDIR}:7888/g" ./Gruntfile.js
 	npm install
-	echo "" && echo "Success!" && open http://$NEWDIR:7888/wp-admin/ && grunt
+	echo "" && echo "Success!" && open http://$NEWDIR:7888/wplogin/ && grunt
 fi
