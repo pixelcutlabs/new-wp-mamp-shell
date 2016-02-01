@@ -21,7 +21,3 @@ Roll a new [Perfect Setup](https://bitbucket.org/tribeswell-llc/perfect-setup) i
 1. Add your host in MAMP PRO while `npm install` is running and map it to the newly created directory in `~/Sites/`.
 1. Wait until the script finishes and opens tabs in your browser.
 1. Done!
-
-### Bonus!
-
-Check out `sync_uploads.sh` for all your WordPress upload-syncing needs. :)
