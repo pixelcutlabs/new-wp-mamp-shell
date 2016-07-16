@@ -10,10 +10,10 @@ read BBREPO
 printf "What should the directory be called on your system?\nThis should be another BitBucket repo name.\nPress return/enter for the default. (default $BBREPO)? "
 read NEWDIR
 NEWDIR=${NEWDIR:-$BBREPO}
-git clone https://$BBUSERNAME@bitbucket.org/tribeswell-llc/$BBREPO.git $NEWDIR
+git clone https://$BBUSERNAME@bitbucket.org/pixelcutlabs/$BBREPO.git $NEWDIR
 cd $NEWDIR
-git remote set-url origin https://$BBUSERNAME@bitbucket.org/tribeswell-llc/$NEWDIR.git
-git remote add upstream https://$BBUSERNAME@bitbucket.org/tribeswell-llc/perfect-setup.git
+git remote set-url origin https://$BBUSERNAME@bitbucket.org/pixelcutlabs/$NEWDIR.git
+git remote add upstream https://$BBUSERNAME@bitbucket.org/pixelcutlabs/perfect-setup.git
 echo "" && echo "Remotes set successfully!" && echo ""
 git remote -v && echo ""
 printf "Generating DB credentials...\n"
@@ -47,9 +47,6 @@ else
 	sed -i '' -e "s/${DBUSER}/${NEWDB}/g" ./wp-config.php
 	sed -i '' -e "s/${DBPASS}/${MYSQLPWD}/g" ./wp-config.php
 	sed -i '' -e "s/${DBNAME}/${NEWDB}/g" ./wp-config.php
-	cd wp-content/themes/scratch-theme/grunt/
-	cp -n ./Gruntfile-sample.js ./Gruntfile.js
-	sed -i '' -e "s/${WPHOME}/${NEWDIR}:7888/g" ./Gruntfile.js
 	npm install
-	echo "" && echo "Success!" && open http://$NEWDIR:7888/wp-admin/ && grunt
+	echo "" && echo "Success!" && open http://$NEWDIR:7888/wp-admin/
 fi
